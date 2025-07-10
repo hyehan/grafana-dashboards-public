@@ -540,17 +540,16 @@
       "list": [
         {
           "current": {
-            "text": ["optimism", "blast", "unichain", "base"],
-            "value": ["optimism", "blast", "unichain", "base"]
+            "text": "optimism",
+            "value": "optimism"
           },
           "datasource": {
             "type": "prometheus",
             "uid": "op-node-metrics"
           },
           "definition": "label_values(op_node_default_up,stack_optimism_io_network)",
-          "includeAll": true,
+          "includeAll": false,
           "label": "Network",
-          "multi": true,
           "name": "network",
           "options": [],
           "query": {
