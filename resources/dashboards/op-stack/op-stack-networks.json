@@ -2,8 +2,8 @@
   "apiVersion": "grizzly.grafana.com/v1alpha1",
   "kind": "Dashboard",
   "metadata": {
-    "folder": "Mq1we2M4k",
-    "name": "nUSlc3d4k"
+    "folder": "op-stack",
+    "name": "op-stack-networks"
   },
   "spec": {
     "annotations": {
@@ -37,7 +37,7 @@
         "datasource": {
           "default": false,
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -240,9 +240,7 @@
         "id": 6,
         "options": {
           "legend": {
-            "calcs": [
-              "last"
-            ],
+            "calcs": ["last"],
             "displayMode": "table",
             "placement": "bottom",
             "showLegend": true
@@ -259,7 +257,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "op_node_default_refs_number{layer=\"l1\",type=\"l1_head\",namespace=~\"$node\",stack_optimism_io_network=${network:doublequote},layer=~\"$layer\",type=~\"$safety\"}",
@@ -270,7 +268,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "op_node_default_refs_number{layer=\"l2\",type=\"l2_safe\",namespace=~\"$node\",stack_optimism_io_network=${network:doublequote},layer=~\"$layer\",type=~\"$safety\"}",
@@ -282,7 +280,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "op_node_default_refs_number{layer=\"l2\",type=\"l2_unsafe\",namespace=~\"$node\",stack_optimism_io_network=${network:doublequote},layer=~\"$layer\",type=~\"$safety\"}",
@@ -294,7 +292,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "op_node_default_refs_number{layer=\"l1_origin\",type=\"l2_safe\",namespace=~\"$node\",stack_optimism_io_network=${network:doublequote},layer=~\"$layer\",type=~\"$safety\"}",
@@ -306,7 +304,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "op_node_default_refs_number{layer=\"l1_origin\",type=\"l2_unsafe\",namespace=~\"$node\",stack_optimism_io_network=${network:doublequote},layer=~\"$layer\",type=~\"$safety\"}",
@@ -322,7 +320,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -388,9 +386,7 @@
         "id": 2,
         "options": {
           "legend": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "displayMode": "table",
             "placement": "bottom",
             "showLegend": true,
@@ -408,7 +404,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "healthcheck_reference_height{stack_optimism_io_network=\"$network\", namespace=~\"$node\"}",
@@ -419,7 +415,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "healthcheck_last_matching_state_root_height{stack_optimism_io_network=\"$network\", namespace=~\"$node\"}",
@@ -431,7 +427,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "healthcheck_target_height{stack_optimism_io_network=\"$network\", namespace=~\"$node\"}",
@@ -447,7 +443,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -524,7 +520,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "healthcheck_is_currently_diverged{stack_optimism_io_network=\"$network\", stack_optimism_io_deployment_type=\"replica\", namespace=~\"$node\"}",
@@ -539,7 +535,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "description": "There is a current bug in the op-node metrics implementation that if the non-leader sequencers are behind the current tip and catching up, they will emit TX-Sequenced metrics, however they are not actually sequencing new TXs to the chain.",
         "fieldConfig": {
@@ -622,7 +618,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "disableTextWrap": false,
             "editorMode": "builder",
@@ -642,7 +638,7 @@
         "datasource": {
           "default": false,
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -710,10 +706,7 @@
                 {
                   "id": "custom.lineStyle",
                   "value": {
-                    "dash": [
-                      10,
-                      10
-                    ],
+                    "dash": [10, 10],
                     "fill": "dash"
                   }
                 }
@@ -730,12 +723,7 @@
         "id": 14,
         "options": {
           "legend": {
-            "calcs": [
-              "last",
-              "mean",
-              "min",
-              "max"
-            ],
+            "calcs": ["last", "mean", "min", "max"],
             "displayMode": "table",
             "placement": "bottom",
             "showLegend": true
@@ -750,7 +738,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "-min_over_time(op_node_default_refs_latency{stack_optimism_io_network=${network:doublequote}, namespace=~\"$node\",layer=~\"$layer\",type=~\"$safety\"}[$__interval])",
@@ -765,7 +753,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -827,7 +815,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "disableTextWrap": false,
             "editorMode": "code",
@@ -847,7 +835,7 @@
         "datasource": {
           "default": false,
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "description": "",
         "fieldConfig": {
@@ -910,11 +898,7 @@
         "id": 18,
         "options": {
           "legend": {
-            "calcs": [
-              "mean",
-              "lastNotNull",
-              "stdDev"
-            ],
+            "calcs": ["mean", "lastNotNull", "stdDev"],
             "displayMode": "table",
             "placement": "right",
             "showLegend": true,
@@ -931,7 +915,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "rate(op_node_default_events_process_time{stack_optimism_io_network=${network:doublequote}, namespace=~\"$node\", deriver=\"engine\", event_type=\"process-unsafe-payload\"}[$__rate_interval])",
@@ -948,7 +932,7 @@
         "datasource": {
           "default": false,
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1033,12 +1017,7 @@
         "id": 15,
         "options": {
           "legend": {
-            "calcs": [
-              "last",
-              "mean",
-              "min",
-              "max"
-            ],
+            "calcs": ["last", "mean", "min", "max"],
             "displayMode": "table",
             "placement": "bottom",
             "showLegend": true
@@ -1053,7 +1032,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "last_over_time(op_node_default_refs_time{stack_optimism_io_network=${network:doublequote}, namespace=~\"$node\",layer=~\"$layer\",type=~\"$safety\"}[$__interval])",
@@ -1068,7 +1047,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1144,7 +1123,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "op_node_default_p2p_peer_count{stack_optimism_io_network=${network:doublequote}, namespace=~\"$node\"}",
@@ -1161,7 +1140,7 @@
         "datasource": {
           "default": false,
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1217,7 +1196,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "disableTextWrap": false,
             "editorMode": "code",
@@ -1235,7 +1214,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "disableTextWrap": false,
             "editorMode": "code",
@@ -1251,7 +1230,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "disableTextWrap": false,
             "editorMode": "code",
@@ -1267,7 +1246,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "disableTextWrap": false,
             "editorMode": "code",
@@ -1283,7 +1262,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "disableTextWrap": false,
             "editorMode": "code",
@@ -1299,7 +1278,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "disableTextWrap": false,
             "editorMode": "code",
@@ -1315,7 +1294,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "disableTextWrap": false,
             "editorMode": "code",
@@ -1331,7 +1310,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "disableTextWrap": false,
             "editorMode": "code",
@@ -1347,7 +1326,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "disableTextWrap": false,
             "editorMode": "code",
@@ -1363,7 +1342,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "disableTextWrap": false,
             "editorMode": "code",
@@ -1384,22 +1363,22 @@
     "preload": false,
     "refresh": "30s",
     "schemaVersion": 40,
-    "tags": [
-      "public"
-    ],
+    "tags": ["op-stack"],
     "templating": {
       "list": [
         {
           "current": {
-            "text": "mainnet-prod",
-            "value": "mainnet-prod"
+            "text": ["optimism", "blast", "unichain", "base"],
+            "value": ["optimism", "blast", "unichain", "base"]
           },
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "op-node-metrics"
           },
           "definition": "label_values(op_node_default_up, stack_optimism_io_network)",
-          "includeAll": false,
+          "label": "Network",
+          "includeAll": true,
+          "multi": true,
           "name": "network",
           "options": [],
           "query": {
@@ -1413,13 +1392,11 @@
         {
           "current": {
             "text": "All",
-            "value": [
-              "$__all"
-            ]
+            "value": "$__all"
           },
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "op-node-metrics"
           },
           "definition": "label_values(op_node_default_up{stack_optimism_io_network=\"$network\"},namespace)",
           "includeAll": true,
@@ -1443,7 +1420,7 @@
           },
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "op-node-metrics"
           },
           "definition": "label_values(op_node_default_refs_number{stack_optimism_io_network=\"$network\", namespace=~\"$node\"},layer)",
           "description": "",
@@ -1469,7 +1446,7 @@
           },
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "op-node-metrics"
           },
           "definition": "label_values(op_node_default_refs_number{stack_optimism_io_network=\"$network\", namespace=~\"$node\", layer=~\"$layer\"},type)",
           "description": "",
@@ -1491,13 +1468,13 @@
       ]
     },
     "time": {
-      "from": "now-1h",
+      "from": "now-12",
       "to": "now"
     },
     "timepicker": {},
     "timezone": "browser",
-    "title": "Bedrock Networks",
-    "uid": "nUSlc3d4k",
+    "title": "OP Stack Networks",
+    "uid": "op-stack-networks",
     "weekStart": ""
   }
 }

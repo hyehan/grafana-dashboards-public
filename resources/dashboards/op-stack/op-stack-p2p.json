@@ -2,8 +2,8 @@
   "apiVersion": "grizzly.grafana.com/v1alpha1",
   "kind": "Dashboard",
   "metadata": {
-    "folder": "Mq1we2M4k",
-    "name": "GKBLJyh4k"
+    "folder": "op-stack",
+    "name": "op-stack-p2p"
   },
   "spec": {
     "annotations": {
@@ -36,7 +36,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -72,9 +72,7 @@
           "minVizWidth": 75,
           "orientation": "auto",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -87,7 +85,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -104,7 +102,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -186,7 +184,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "op_node_default_p2p_peer_count{stack_optimism_io_network=\"$network\"}",
@@ -201,7 +199,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -283,7 +281,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "rate(op_node_default_p2p_gossip_events_total{stack_optimism_io_network=\"$network\"}[5m])",
@@ -298,7 +296,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -375,7 +373,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "rate(op_node_default_p2p_bandwidth_bytes_total{stack_optimism_io_network=\"$network\", direction=\"in\"}[5m])",
@@ -390,7 +388,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -467,7 +465,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "rate(op_node_default_p2p_bandwidth_bytes_total{stack_optimism_io_network=\"$network\", direction=\"out\"}[5m])",
@@ -483,22 +481,21 @@
     "preload": false,
     "refresh": "",
     "schemaVersion": 40,
-    "tags": [
-      "public"
-    ],
+    "tags": ["op-stack"],
     "templating": {
       "list": [
         {
           "current": {
-            "text": "mainnet-prod",
-            "value": "mainnet-prod"
+            "text": ["optimism", "blast", "unichain", "base"],
+            "value": ["optimism", "blast", "unichain", "base"]
           },
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "op-node-metrics"
           },
           "definition": "op_node_default_up",
-          "includeAll": false,
+          "includeAll": true,
+          "multi": true,
           "label": "Network",
           "name": "network",
           "options": [],
@@ -513,13 +510,13 @@
       ]
     },
     "time": {
-      "from": "now-6h",
+      "from": "now-12h",
       "to": "now"
     },
     "timepicker": {},
-    "timezone": "",
-    "title": "Bedrock P2P",
-    "uid": "GKBLJyh4k",
+    "timezone": "browser",
+    "title": "OP Stack P2P",
+    "uid": "op-stack-p2p",
     "weekStart": ""
   }
 }

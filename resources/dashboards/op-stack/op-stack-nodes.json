@@ -2,8 +2,8 @@
   "apiVersion": "grizzly.grafana.com/v1alpha1",
   "kind": "Dashboard",
   "metadata": {
-    "folder": "Mq1we2M4k",
-    "name": "se3IcqO4k"
+    "folder": "op-stack",
+    "name": "op-stack-nodes"
   },
   "spec": {
     "annotations": {
@@ -50,7 +50,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -84,9 +84,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "/^version$/",
             "values": true
           },
@@ -102,7 +100,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -120,7 +118,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -154,9 +152,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "/^required$/",
             "values": true
           },
@@ -172,7 +168,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -190,7 +186,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -224,9 +220,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "/^local$/",
             "values": true
           },
@@ -242,7 +236,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -260,7 +254,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -322,9 +316,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "max"
-            ],
+            "calcs": ["max"],
             "fields": "",
             "values": false
           },
@@ -337,7 +329,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "op_node_default_last_pipeline_reset_unix{namespace=${node:doublequote},stack_optimism_io_network=${network:doublequote}} * 1000",
@@ -351,7 +343,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -470,9 +462,7 @@
         "maxDataPoints": 1000,
         "options": {
           "legend": {
-            "calcs": [
-              "mean"
-            ],
+            "calcs": ["mean"],
             "displayMode": "list",
             "placement": "bottom",
             "showLegend": true
@@ -488,7 +478,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "1/max(rate(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l1_head\", layer=\"l1\", stack_optimism_io_network=${network:doublequote}}[$__interval]))",
@@ -500,7 +490,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "1/max(rate(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l2_safe\", layer=\"l2\", stack_optimism_io_network=${network:doublequote}}[10m]))",
@@ -512,7 +502,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "1/max(rate(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l2_unsafe\", layer=\"l2\", stack_optimism_io_network=${network:doublequote}}[$__interval]))",
@@ -528,7 +518,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -562,9 +552,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "/^recommended$/",
             "values": true
           },
@@ -580,7 +568,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -598,7 +586,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -632,9 +620,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "/^engine$/",
             "values": true
           },
@@ -650,7 +636,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -668,7 +654,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -733,9 +719,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -748,7 +732,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_up{namespace=${node:doublequote},stack_optimism_io_network=${network:doublequote}})",
@@ -762,7 +746,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -796,9 +780,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -811,7 +793,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l1_head\", stack_optimism_io_network=${network:doublequote}})",
@@ -826,7 +808,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -860,9 +842,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -875,7 +855,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -893,7 +873,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -927,9 +907,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -942,7 +920,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l2_unsafe\", layer=\"l2\", stack_optimism_io_network=${network:doublequote}})",
@@ -958,7 +936,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1077,9 +1055,7 @@
         "maxDataPoints": 1000,
         "options": {
           "legend": {
-            "calcs": [
-              "mean"
-            ],
+            "calcs": ["mean"],
             "displayMode": "list",
             "placement": "bottom",
             "showLegend": true
@@ -1095,7 +1071,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(rate(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l2_safe\", layer=\"l2\", stack_optimism_io_network=${network:doublequote}}[10m]))",
@@ -1107,7 +1083,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(rate(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l2_unsafe\", layer=\"l2\", stack_optimism_io_network=${network:doublequote}}[10m]))",
@@ -1123,7 +1099,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1188,9 +1164,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -1203,7 +1177,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_derivation_idle{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}})",
@@ -1217,7 +1191,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1251,9 +1225,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -1266,7 +1238,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l1_safe\", layer=\"l1\", stack_optimism_io_network=${network:doublequote}})",
@@ -1281,7 +1253,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1315,9 +1287,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -1330,7 +1300,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -1348,7 +1318,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1382,9 +1352,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -1397,7 +1365,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l2_safe\", layer=\"l2\", stack_optimism_io_network=${network:doublequote}})",
@@ -1413,7 +1381,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1451,9 +1419,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -1466,7 +1432,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_pipeline_resets_total{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}})",
@@ -1480,7 +1446,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1514,9 +1480,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -1529,7 +1493,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l1_finalized\", layer=\"l1\", stack_optimism_io_network=${network:doublequote}})",
@@ -1544,7 +1508,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1578,9 +1542,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -1593,7 +1555,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -1611,7 +1573,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1645,9 +1607,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -1660,7 +1620,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l2_finalized\", layer=\"l2\", stack_optimism_io_network=${network:doublequote}})",
@@ -1676,7 +1636,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1759,7 +1719,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(rate(op_node_default_transactions_sequenced_total{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}}[$__interval]))",
@@ -1774,7 +1734,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1812,9 +1772,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -1827,7 +1785,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_sequencing_errors_total{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}})",
@@ -1841,7 +1799,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1875,9 +1833,7 @@
           "orientation": "auto",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -1890,7 +1846,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l1_derived\", layer=\"l1\", stack_optimism_io_network=${network:doublequote}})",
@@ -1905,7 +1861,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -1950,9 +1906,7 @@
           "namePlacement": "auto",
           "orientation": "auto",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -1965,7 +1919,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -1983,7 +1937,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -2094,9 +2048,7 @@
         "id": 61,
         "options": {
           "legend": {
-            "calcs": [
-              "last"
-            ],
+            "calcs": ["last"],
             "displayMode": "list",
             "placement": "bottom",
             "showLegend": true
@@ -2110,7 +2062,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l1_head\", layer=\"l1\", stack_optimism_io_network=${network:doublequote}})",
@@ -2122,7 +2074,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=~\"l2_unsafe\", layer=\"l2\", stack_optimism_io_network=${network:doublequote}})",
@@ -2134,7 +2086,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l2_safe\", layer=\"l2\", stack_optimism_io_network=${network:doublequote}})",
@@ -2146,7 +2098,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l2_finalized\", layer=\"l2\", stack_optimism_io_network=${network:doublequote}})",
@@ -2158,7 +2110,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l2_unsafe\", layer=\"l1_origin\", stack_optimism_io_network=${network:doublequote}})",
@@ -2170,7 +2122,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l2_safe\", layer=\"l1_origin\", stack_optimism_io_network=${network:doublequote}})",
@@ -2182,7 +2134,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l2_finalized\", layer=\"l1_origin\", stack_optimism_io_network=${network:doublequote}})",
@@ -2194,7 +2146,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_refs_number{namespace=${node:doublequote}, type=\"l1_finalized\", layer=\"l1\", stack_optimism_io_network=${network:doublequote}})",
@@ -2210,7 +2162,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -2246,9 +2198,7 @@
           "justifyMode": "auto",
           "orientation": "auto",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -2261,7 +2211,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_derivation_errors_total{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}})",
@@ -2275,7 +2225,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -2343,7 +2293,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "sum(increase(op_node_default_l1_reorg_depth_bucket{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}}[$__interval])) by (le)",
@@ -2359,7 +2309,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -2395,9 +2345,7 @@
           "justifyMode": "auto",
           "orientation": "auto",
           "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
+            "calcs": ["lastNotNull"],
             "fields": "",
             "values": false
           },
@@ -2410,7 +2358,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_sequencing_errors_total{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}})",
@@ -2424,7 +2372,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "description": "",
         "fieldConfig": {
@@ -2488,9 +2436,7 @@
                 "id": "byNames",
                 "options": {
                   "mode": "exclude",
-                  "names": [
-                    "debug_getRawReceipts"
-                  ],
+                  "names": ["debug_getRawReceipts"],
                   "prefix": "All except:",
                   "readOnly": true
                 }
@@ -2518,10 +2464,7 @@
         "interval": "2m",
         "options": {
           "legend": {
-            "calcs": [
-              "lastNotNull",
-              "mean"
-            ],
+            "calcs": ["lastNotNull", "mean"],
             "displayMode": "table",
             "placement": "bottom",
             "showLegend": true
@@ -2535,7 +2478,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "sum by (method) (rate(op_node_default_rpc_client_requests_total{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}}[$__rate_interval]))",
@@ -2550,7 +2493,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -2616,7 +2559,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -2634,7 +2577,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -2739,10 +2682,7 @@
                 "id": "byNames",
                 "options": {
                   "mode": "exclude",
-                  "names": [
-                    "receipts add",
-                    "receipts get"
-                  ],
+                  "names": ["receipts add", "receipts get"],
                   "prefix": "All except:",
                   "readOnly": true
                 }
@@ -2784,7 +2724,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "sum by (type) (rate(op_node_default_l1_source_cache_add{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}}[$__interval])) * 60",
@@ -2795,7 +2735,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "sum by (type) (-rate(op_node_default_l1_source_cache_get{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}}[$__interval]) * 60)",
@@ -2811,7 +2751,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -2877,7 +2817,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -2895,7 +2835,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -3020,7 +2960,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "sum by (type) (rate(op_node_default_l2_source_cache_add{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}}[$__interval])) * 60",
@@ -3031,7 +2971,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "sum by (type) (-rate(op_node_default_l2_source_cache_get{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}}[$__interval]) * 60)",
@@ -3047,7 +2987,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -3113,7 +3053,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -3131,7 +3071,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "description": "",
         "fieldConfig": {
@@ -3198,7 +3138,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -3216,7 +3156,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -3334,7 +3274,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_p2p_peer_count{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}})",
@@ -3345,7 +3285,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_p2p_stream_count{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}})",
@@ -3361,7 +3301,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "description": "",
         "fieldConfig": {
@@ -3428,7 +3368,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -3446,7 +3386,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "description": "",
         "fieldConfig": {
@@ -3565,7 +3505,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_unsafe_payloads_buffer_len{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}})",
@@ -3580,7 +3520,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "description": "",
         "fieldConfig": {
@@ -3661,7 +3601,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(rate(op_node_default_p2p_bandwidth_bytes_total{namespace=${node:doublequote},direction=\"in\", stack_optimism_io_network=${network:doublequote}}[$__interval]))",
@@ -3672,7 +3612,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(rate(op_node_default_p2p_bandwidth_bytes_total{namespace=${node:doublequote},direction=\"out\", stack_optimism_io_network=${network:doublequote}}[$__interval]))",
@@ -3688,7 +3628,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "description": "",
         "fieldConfig": {
@@ -3805,7 +3745,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max(op_node_default_unsafe_payloads_buffer_mem_size{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}})",
@@ -3820,7 +3760,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "description": "",
         "fieldConfig": {
@@ -3918,9 +3858,7 @@
                 "id": "byNames",
                 "options": {
                   "mode": "exclude",
-                  "names": [
-                    "op-node Resident"
-                  ],
+                  "names": ["op-node Resident"],
                   "prefix": "All except:",
                   "readOnly": true
                 }
@@ -3961,7 +3899,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max by (job) (process_resident_memory_bytes{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}})",
@@ -3972,7 +3910,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "max by (job) (process_virtual_memory_bytes{namespace=${node:doublequote}, stack_optimism_io_network=${network:doublequote}})",
@@ -3988,7 +3926,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "fieldConfig": {
           "defaults": {
@@ -4066,7 +4004,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "exemplar": false,
@@ -4083,7 +4021,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "grafanacloud-prom"
+          "uid": "op-node-metrics"
         },
         "description": "",
         "fieldConfig": {
@@ -4165,7 +4103,7 @@
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "grafanacloud-prom"
+              "uid": "op-node-metrics"
             },
             "editorMode": "code",
             "expr": "sum by (type) (rate(op_node_default_p2p_gossip_events_total{namespace=${node:doublequote}}[$__interval])) * 60",
@@ -4181,23 +4119,23 @@
     "preload": false,
     "refresh": "",
     "schemaVersion": 40,
-    "tags": [
-      "public"
-    ],
+    "tags": ["op-stack"],
     "templating": {
       "list": [
         {
           "current": {
-            "text": "mainnet-prod",
-            "value": "mainnet-prod"
+            "text": ["optimism", "blast", "unichain", "base"],
+            "value": ["optimism", "blast", "unichain", "base"]
           },
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "op-node-metrics"
           },
           "definition": "label_values(op_node_default_up, stack_optimism_io_network)",
-          "includeAll": false,
+          "includeAll": true,
+          "multi": true,
           "name": "network",
+          "label": "Network",
           "options": [],
           "query": {
             "query": "label_values(op_node_default_up, stack_optimism_io_network)",
@@ -4209,16 +4147,12 @@
         },
         {
           "current": {
-            "text": [
-              "sequencer-0"
-            ],
-            "value": [
-              "sequencer-0"
-            ]
+            "text": "All",
+            "value": ["$__all"]
           },
           "datasource": {
             "type": "prometheus",
-            "uid": "grafanacloud-prom"
+            "uid": "op-node-metrics"
           },
           "definition": "label_values(op_node_default_up{stack_optimism_io_network=\"$network\"},namespace)",
           "includeAll": true,
@@ -4242,9 +4176,9 @@
       "to": "now"
     },
     "timepicker": {},
-    "timezone": "utc",
-    "title": "Bedrock Nodes",
-    "uid": "se3IcqO4k",
+    "timezone": "browser",
+    "title": "OP Stack Nodes",
+    "uid": "op-stack-nodes",
     "weekStart": ""
   }
 }
